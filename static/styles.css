@@ -1,0 +1,7 @@
+  div#title {
+    color: black;
+    font-weight: bold;
+    background: #FFFF66; /* yellow */
+    border: 2px solid black;
+    padding: 1em;
+  }
