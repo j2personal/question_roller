@@ -1,4 +1,12 @@
-  div#title {
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+ div#title {
     color: black;
     text-align: center
     font-weight: bold;
