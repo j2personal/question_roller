@@ -3,10 +3,11 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    """Print 'Hello, world!' as the response body."""
-    return 'Question Roller'
+    if request.method == 'GET':
+        return render_template("index.html")
+    
 
 
 
