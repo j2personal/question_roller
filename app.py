@@ -61,6 +61,7 @@ def view():
 def add():
     if request.method == 'POST':
         new_q = request.form.get("new_q")
+        print(new_q)
         conn = None
 
         try:
@@ -68,7 +69,8 @@ def add():
             cur = conn.cursor()
             
             cur.execute(f"INSERT INTO questions (question) VALUES (\'{new_q}\')")
-            lst = cur.fetchall()
+            
+            
             cur.close()
             conn.commit()
         except (Exception, psycopg2.DatabaseError) as error:
