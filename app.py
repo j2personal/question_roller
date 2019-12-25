@@ -29,8 +29,9 @@ def index():
 def view():
     if request.method == 'GET':
         cur = conn.cursor()
-        cur.execute("SELECT question FROM questions")
+        cur.execute("SELECT id, question FROM questions")
         lst = [item[0] for item in cur.fetchall()]
+        print(lst)
 
         cur.close()
         return render_template("view.html", lst=lst)
