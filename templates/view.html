@@ -15,12 +15,12 @@
 	</script>
 
 	<table style="width:100%">
-		{% for item in lst %}
+		{% for (item, val) in lst %}
 			<tr>
 				<td>{{item}}</td>
 				<td>
 					<form action="/delete">
-						<input type="hidden" id="row_id" name="row_id" value="3487">
+						<input type="hidden" id="row_id" name="row_id" value={{val}}>
 						<input type="submit" value="Delete" onclick="SomeDeleteRowFunction(this)">
 					</form>
 				</td>

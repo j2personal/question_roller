@@ -30,7 +30,7 @@ def view():
     if request.method == 'GET':
         cur = conn.cursor()
         cur.execute("SELECT * FROM questions")
-        lst = [item[0] for item in cur.fetchall()]
+        lst = [(item[0], item[1]) for item in cur.fetchall()]
         print(lst)
 
         cur.close()
