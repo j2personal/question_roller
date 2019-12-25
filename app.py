@@ -91,7 +91,7 @@ def delete():
             cur = conn.cursor()
             
             cur.execute(f"DELETE FROM questions WHERE question_id = {row_id}")
-            lst = cur.fetchall()
+            
             cur.close()
             conn.commit()
         except (Exception, psycopg2.DatabaseError) as error:
