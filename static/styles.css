@@ -24,6 +24,9 @@ body {
     font-size: 20px;
   }
 
+#question{
+	font-size: 30px;
+}
 #extras {
     text-align: center;
   }

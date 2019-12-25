@@ -6,14 +6,14 @@
 		<h3 id="question">Press button to roll!</h3>
 	</div>
 
-	<button id="roll">Pick My Poison!</button><br><br>
+	<button class="button" id="roll">Pick My Poison!</button><br><br>
 {% endblock %}
 
 {% block extras %}
-	<a href="/view"><button id="view">View All</button></a><br><br>
+	<a href="/view"><button class="button" id="view">View All</button></a><br><br>
 	
 	<form action="/add" method="post">
 		<input type="text" id= "new_q" name="new_q"><br>
-		<button type="submit"> Add Question</button>
+		<button class="button" type="submit"> Add Question</button>
 	</form>
 {% endblock %}
