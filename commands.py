@@ -1,4 +1,5 @@
 import psycopg2
+import os
  
 def create_tables():
     """ create tables in the PostgreSQL database"""
