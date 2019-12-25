@@ -29,7 +29,7 @@ def index():
 def view():
     if request.method == 'GET':
         cur = conn.cursor()
-        cur.execute("SELECT id, question FROM questions")
+        cur.execute("SELECT * FROM questions")
         lst = [item[0] for item in cur.fetchall()]
         print(lst)
 
