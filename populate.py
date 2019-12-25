@@ -60,10 +60,10 @@ def populate():
         conn = psycopg2.connect(DATABASE_URL, sslmode='require')
         cur = conn.cursor()
 
-        sql = """ INSERT INTO questions (question) VALUES (%s)"""
+        # sql = """ INSERT INTO questions (question) VALUES (%s)"""
 
         for q in questions:
-            cur.execute(sql, q)
+            cur.execute(""" INSERT INTO questions (question) VALUES (%s)""", q)
 
         cur.close()
         conn.commit()
