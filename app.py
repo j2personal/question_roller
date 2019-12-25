@@ -12,11 +12,11 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 def index():
     if request.method == 'GET':
         cur = conn.cursor()
-        
-        cur.execute("""SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'""")
-        for table in cur.fetchall():
-            print(table)
-        
+        cur.execute("SELECT question FROM questions")
+
+        lst = cur.fetchall()
+        print(lst)
+        cur.close()
         return render_template("index.html")
 
 
