@@ -20,9 +20,10 @@ body {
 
  div#content {
     text-align: center;
+    font-family: sans-serif;
   }
 
- div#extras {
+#extras {
     text-align: center;
   }
 
