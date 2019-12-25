@@ -3,12 +3,7 @@ import os
  
 def create_tables():
     """ create tables in the PostgreSQL database"""
-    commands = (
-        """
-        CREATE TABLE questions (
-            question_id SERIAL PRIMARY KEY,
-            question VARCHAR(255) NOT NULL
-        )""")
+    command = "CREATE TABLE questions (question_id SERIAL PRIMARY KEY,question VARCHAR(255) NOT NULL);"
     conn = None
 
     try:
@@ -16,8 +11,8 @@ def create_tables():
         conn = psycopg2.connect(DATABASE_URL, sslmode='require')
         cur = conn.cursor()
         # create table one by one
-        for command in commands:
-            cur.execute(command)
+        # for command in commands:
+        cur.execute(command)
         # close communication with the PostgreSQL database server
         cur.close()
         # commit the changes
