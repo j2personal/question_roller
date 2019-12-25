@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 import os
 import psycopg2
 import random
@@ -40,16 +40,27 @@ def view():
 @app.route('/add', methods=['POST'])
 def add():
     if request.method == 'POST':
-        request.form.get
+        new_q = request.form.get("new_q")
         cur = conn.cursor()
         
-        cur.execute("SELECT question FROM questions")
+        cur.execute(f"INSERT INTO questions (question) VALUES (\'{new_q}\')")
         lst = cur.fetchall()
         cur.close()
 
-        item = random.choice(lst)[0]
-
         return(item)
+
+@app.route('/delete', methods=['POST'])
+def delete():
+    if request.method == 'POST':
+        row_id = request.form.get("row_id")
+        cur = conn.cursor()
+        
+        cur.execute(f"DELETE FROM questions WHERE question_id = {row_id}")
+        lst = cur.fetchall()
+        cur.close()
+
+        return redirect(url_for('view'))
+
 
 
 
