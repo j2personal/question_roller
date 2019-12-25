@@ -4,7 +4,7 @@ import os
 def populate():
     """ create tables in the PostgreSQL database"""
     questions = [
-        "\'Name something your ex should have done sexually\'", 
+        "Name something your ex should have done sexually", 
         "Name the person here that Person A should hook up with",
         "Describe your first time in detail",
         "What is the sex skill you are most proud of?",
@@ -63,7 +63,7 @@ def populate():
         # sql = """ INSERT INTO questions (question) VALUES (%s)"""
 
         for q in questions:
-            cur.execute(f" INSERT INTO questions (question) VALUES ({q})", )
+            cur.execute(f" INSERT INTO questions (question) VALUES (\'{q}\'')", )
 
         cur.close()
         conn.commit()
