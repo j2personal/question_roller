@@ -1,66 +1,18 @@
-<!DOCTYPE html>
-<html>
-	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-	<meta name=”viewport” content=”width=device-width, initial-scale=1″>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		  $('#roll').click(function(){
-		    $.post("/",
-		    {
-		      name: "Donald Duck",
-		      city: "Duckburg"
-		    },
-
-		    function(data,status){
-		      
-		    	$('#question').html(data);
-		      // alert("Data: " + data + "\nStatus: " + status);
-		    });
-		  });
-		});
-
-		$(document).ready(function(){
-		  $('#add').click(function(){
-		    $.post("/",
-		    
-		    {
-		      name: "Donald Duck",
-		      city: "Duckburg"
-		    },
-
-		    function(data,status){
-		      
-		    	$('#question').html(data);
-		      // alert("Data: " + data + "\nStatus: " + status);
-		    });
-		  });
-		});
-	</script>
-
-	<body>
-		<div id="title">
-			<h2>The (minimalist) Truth or Drink Question Picker</h2>
-		</div>
-
-		<div id="content">
-			<div id="question">
-				<h3 id="question">Press button to roll!</h3>
-			</div>
-
-			<button id="roll">Pick My Poison!</button><br><br>
-		</div>
+{% extends "layout.html" %}
 
 
-		<div id="extras">
-			<button id="view">View All</button><br><br>
+{% block content %}
+	<div id="question">
+		<h3 id="question">Press button to roll!</h3>
+	</div>
 
-			<form>
-				<input type="text" name="new_q"><br>
-				<button type="submit"> Add Question</button>
-			</form>
-			
-		</div>
-	
-	</body>
-</html>
+	<button id="roll">Pick My Poison!</button><br><br>
+{% endblock %}
+
+{% block extras %}
+	<a href="/view"><button id="view">View All</button></a><br><br>
+	<form>
+		<input type="text" name="new_q"><br>
+		<button type="submit"> Add Question</button>
+	</form>
+{% endblock %}

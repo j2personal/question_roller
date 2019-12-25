@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<meta name=”viewport” content=”width=device-width, initial-scale=1″>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		  $('#roll').click(function(){
+		    $.post("/",
+		    {
+		      name: "Donald Duck",
+		      city: "Duckburg"
+		    },
+
+		    function(data,status){
+		      
+		    	$('#question').html(data);
+		      // alert("Data: " + data + "\nStatus: " + status);
+		    });
+		  });
+		});
+
+		$(document).ready(function(){
+		  $('#add').click(function(){
+		    $.post("/",
+		    
+		    {
+		      name: "Donald Duck",
+		      city: "Duckburg"
+		    },
+
+		    function(data,status){
+		      
+		    	$('#question').html(data);
+		      // alert("Data: " + data + "\nStatus: " + status);
+		    });
+		  });
+		});
+	</script>
+
+	<body>
+		<div id="title">
+			<h2>The (minimalist) Truth or Drink Question Picker</h2>
+		</div>
+
+		<div id="content">
+			{% block head %}
+			{% end block %}
+		</div>
+
+
+		<div id="extras">
+			{% block extras %}
+			{% end block %}
+			
+		</div>
+	
+	</body>
+</html>
