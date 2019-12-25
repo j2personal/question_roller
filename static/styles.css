@@ -4,6 +4,7 @@ html {
 
 body {
   min-height: 100%;
+  padding-bottom: 100px;
 }
 
  div#title {
@@ -32,7 +33,7 @@ body {
   }
 
 .button {
-  background-color: black; /* Green */
+  background-color: #000000;
   border: none;
   color: white;
   padding: 15px 32px;
