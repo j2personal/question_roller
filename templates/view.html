@@ -4,12 +4,8 @@
 {% block content %}
 	<script>
 	    function SomeDeleteRowFunction(o) {
-	    	var p=o.parentNode.parentNode;
+	    	var p=o.parentNode.parentNode.parentNode;
 	        p.parentNode.removeChild(p);
-
-	        var q = o.parentNode.siblingNode;
-
-
     	}
 
 	</script>
@@ -21,7 +17,7 @@
 				<td>
 					<form action="/delete" method="post">
 						<input type="hidden" id="row_id" name="row_id" value={{val}}>
-						<button type="submit" value="Delete" onclick="SomeDeleteRowFunction(this)">
+						<input type="submit" value="Delete" onclick="SomeDeleteRowFunction(this)">
 					</form>
 				</td>
 			</tr>
