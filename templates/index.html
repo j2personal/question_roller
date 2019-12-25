@@ -19,6 +19,23 @@
 		    });
 		  });
 		});
+
+		$(document).ready(function(){
+		  $('#add').click(function(){
+		    $.post("/",
+		    
+		    {
+		      name: "Donald Duck",
+		      city: "Duckburg"
+		    },
+
+		    function(data,status){
+		      
+		    	$('#question').html(data);
+		      // alert("Data: " + data + "\nStatus: " + status);
+		    });
+		  });
+		});
 	</script>
 
 	<body>
@@ -28,7 +45,7 @@
 
 		<div id="content">
 			<div id="question">
-				<h3 id="question">Press Roll to pick!</h3>
+				<h3 id="question">Sample Question</h3>
 			</div>
 
 			<button id="roll">Pick My Poison!</button>
@@ -36,8 +53,13 @@
 
 
 		<div id="extras">
-			<button id="view">View All</button>
-			<button id="add"> Add Question</button>
+			<button id="view">View All</button><br>
+
+			<form>
+				<input type="text" name="new_q"><br>
+				<button type="submit"> Add Question</button>
+			</form>
+			
 		</div>
 	
 	</body>
