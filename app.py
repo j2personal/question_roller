@@ -77,7 +77,7 @@ def add():
             if conn is not None:
                 conn.close
         
-        return None
+        return redirect(url_for("index"))
 
 @app.route('/delete', methods=['POST'])
 def delete():
@@ -94,7 +94,7 @@ def delete():
             conn.commit()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
-            
+
         return redirect(url_for('view'))
 
 
