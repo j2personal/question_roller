@@ -20,22 +20,7 @@
 		  });
 		});
 
-		$(document).ready(function(){
-		  $('#add').click(function(){
-		    $.post("/",
-		    
-		    {
-		      name: "Donald Duck",
-		      city: "Duckburg"
-		    },
 
-		    function(data,status){
-		      
-		    	$('#question').html(data);
-		      // alert("Data: " + data + "\nStatus: " + status);
-		    });
-		  });
-		});
 	</script>
 
 	<body>
