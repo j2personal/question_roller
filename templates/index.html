@@ -2,6 +2,23 @@
 <html>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 	<meta name=”viewport” content=”width=device-width, initial-scale=1″>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		  $("button").click(function(){
+		    $.post("/",
+		    {
+		      name: "Donald Duck",
+		      city: "Duckburg"
+		    },
+
+		    function(data,status){
+		      alert("Data: " + data + "\nStatus: " + status);
+		    });
+		  });
+		});
+	</script>
+
 	<body>
 		<div id="title">
 			<h2>The Truth or Drink Question Picker</h2>
