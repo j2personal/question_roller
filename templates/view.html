@@ -2,12 +2,16 @@
 
 
 {% block content %}
+	<table style="width:100%">
+		{% for item in lst %}
+			<tr>
+				<td>{{item}}</td>
+				<td><button>Delete</button></td>
+			</tr>
+		{% endfor %}
+	</table>
 
-	{% for item in lst %}
-		
-		<ul>item</ul> <button>Delete</button>
-		
-	{% endfor %}
+
 
 {% endblock %}
 
