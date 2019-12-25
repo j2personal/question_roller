@@ -61,7 +61,6 @@ def view():
 def add():
     if request.method == 'POST':
         new_q = request.form.get("new_q")
-        print(new_q)
         conn = None
 
         try:
@@ -88,6 +87,7 @@ def delete():
         try:
             conn = psycopg2.connect(DATABASE_URL, sslmode='require')
             row_id = request.form.get("row_id")
+            print(row_id)
             cur = conn.cursor()
             
             cur.execute(f"DELETE FROM questions WHERE question_id = {row_id}")
