@@ -5,7 +5,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
-		  $("button").click(function(){
+		  $('#roll').click(function(){
 		    $.post("/",
 		    {
 		      name: "Donald Duck",
@@ -23,7 +23,7 @@
 
 	<body>
 		<div id="title">
-			<h2>The Truth or Drink Question Picker</h2>
+			<h2>The (minimalist) Truth or Drink Question Picker</h2>
 		</div>
 
 		<div id="content">
@@ -33,7 +33,12 @@
 
 			<button id="roll">Pick My Poison!</button>
 		</div>
-	
 
+
+		<div id="extras">
+			<button id="view">View All</button>
+			<button id="add"> Add Question</button>
+		</div>
+	
 	</body>
 </html>
