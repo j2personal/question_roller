@@ -20,8 +20,8 @@
 				<td>{{item}}</td>
 				<td>
 					<form action="/delete" method="post">
-						<input type="submit" value="Delete" onclick="SomeDeleteRowFunction(this)">
 						<input type="hidden" id="row_id" name="row_id" value={{val}}>
+						<button type="submit" value="Delete" onclick="SomeDeleteRowFunction(this)">
 					</form>
 				</td>
 			</tr>
