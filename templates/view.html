@@ -3,10 +3,11 @@
 
 {% block content %}
 	<script>
-		$("#delete").click(function() {
-		    $(this).closest('tr').remove()    // Outputs the answer
-		});
-
+	    function SomeDeleteRowFunction(o) {
+     //no clue what to put here?
+     var p=o.parentNode.parentNode;
+         p.parentNode.removeChild(p);
+    }
 
 	</script>
 
@@ -14,7 +15,7 @@
 		{% for item in lst %}
 			<tr>
 				<td>{{item}}</td>
-				<td><button id="delete">Delete</button></td>
+				<td><input type="button" value="Delete" onclick="SomeDeleteRowFunction(this)"></td>
 			</tr>
 		{% endfor %}
 	</table>
