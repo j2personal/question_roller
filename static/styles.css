@@ -8,11 +8,11 @@ body {
 
  div#title {
     color: black;
-    text-align: center
+    font-family: sans-serif;
+    text-align: center;
     font-weight: bold;
-    background: #FFFF66; /* yellow */
-    border: 2px solid black;
-    width: 100%;
+    font-size: xx-large;
     height: 50%;
     padding: 1em;
+    margin-top: 20%;
   }
