@@ -3,8 +3,9 @@
 
 {% block content %}
 	<div id="question">
-		<b id="question">Press button to roll!</b><br><br>
+		<b> Press button to roll!</b>
 	</div>
+	<br><br>
 
 	<button class="button" id="roll">Pick My Poison!</button>
 	<br><br><br><br>
@@ -14,7 +15,7 @@
 	<a href="/view"><button class="button" id="view">View All</button></a><br><br>
 	
 	<form action="/add" method="post">
-		<input type="text" id= "new_q" name="new_q"><br>
+		<input type="text" id= "new_q" required="required" name="new_q"><br>
 		<button class="button" type="submit"> Add Question</button>
 	</form>
 {% endblock %}
