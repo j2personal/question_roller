@@ -2,11 +2,19 @@
 
 
 {% block content %}
+	<script>
+		$("#delete").click(function() {
+		    $(this).closest('tr').remove()    // Outputs the answer
+		});
+
+
+	</script>
+
 	<table style="width:100%">
 		{% for item in lst %}
 			<tr>
 				<td>{{item}}</td>
-				<td><button>Delete</button></td>
+				<td><button id="delete">Delete</button></td>
 			</tr>
 		{% endfor %}
 	</table>
