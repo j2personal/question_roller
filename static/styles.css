@@ -16,3 +16,8 @@ body {
     padding: 1em;
     margin-top: 21%;
   }
+
+
+ div#content {
+    text-align: center;
+  }

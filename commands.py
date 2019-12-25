@@ -3,7 +3,7 @@ import os
  
 def create_tables():
     """ create tables in the PostgreSQL database"""
-    command = "CREATE TABLE questions (question_id SERIAL PRIMARY KEY,question VARCHAR(255) NOT NULL);"
+    command = "CREATE TABLE questions (question_id SERIAL PRIMARY KEY, question VARCHAR(255) NOT NULL);"
     conn = None
 
     try:

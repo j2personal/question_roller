@@ -6,16 +6,20 @@ app = Flask(__name__)
 
 
 DATABASE_URL = os.environ['DATABASE_URL']
-
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
+        cur = conn.cursor()
+        lst = cur.execute("SELECT * FROM questions")
+        print(lst)
         return render_template("index.html")
 
-    
-    # if request.method == 'POST':
+
+    if request.method == 'POST':
+
+        request.form.get("")
 
 
 
