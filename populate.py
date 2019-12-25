@@ -63,7 +63,7 @@ def populate():
         # sql = """ INSERT INTO questions (question) VALUES (%s)"""
 
         for q in questions:
-            cur.execute(f" INSERT INTO questions (question) VALUES (\'{q}\'')", )
+            cur.execute(f" INSERT INTO questions (question) VALUES (\'{q}\')", )
 
         cur.close()
         conn.commit()
